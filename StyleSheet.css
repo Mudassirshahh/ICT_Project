@@ -1,0 +1,343 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('image2.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+
+nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #CB6040; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 30px;
+    padding-right: 30px;
+    color: #FFF7D1;
+    font-weight: bold;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: left;
+}
+
+.nav-links ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.nav-links ul li {
+    list-style: none;
+    padding: 4px 12px;
+}
+
+.nav-links ul li a {
+    color: #FFF7D1;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.3s, background-color 0.3s;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.nav-links ul li a:hover {
+    color: #CB6040; 
+    background-color: #FFD09B; 
+}
+
+
+@media (max-width: 768px) {
+    .nav-links ul {
+        flex-direction: column;
+        background-color: #CB6040;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        display: none;
+    }
+
+    .nav-links ul li {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .nav-links ul.show {
+        display: flex;
+    }
+}
+
+
+.toggle-button {
+    display: none;
+    font-size: 25px;
+    color: #FFF7D1;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .toggle-button {
+        display: block;
+    }
+}
+
+
+.input-group {
+    max-width: 200px;
+}
+
+.input-group-text {
+    color: #FFD09B;
+    background-color: transparent;
+    border: none;
+}
+
+.form-control {
+    color: #FFD09B;
+    background-color: transparent;
+    border: none;
+}
+
+.input-group-text i {
+    color: #FFD09B;
+}
+
+
+.middle-left-container {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(100%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    z-index: 1;
+    opacity: 0;
+    animation: floatInUp 1s forwards; 
+}
+
+@keyframes floatInUp {
+    0% {
+        transform: translatex(20px); 
+        opacity: 0;
+    }
+    100% {
+        transform: translatex(0); 
+        opacity: 1; 
+    }
+}
+
+.middle-left-container img {
+    width: 100px;
+    height: auto;
+    border-radius: 16% !important;
+    margin-right: 20px;
+    transition: transform 0.3s ease;
+    cursor: not-allowed;
+}
+
+.middle-left-container img:hover {
+    transform: scale(1.05) translateY(-5px); 
+}
+
+.middle-left-container .text h3 {
+    color: #CB6040;
+    font-weight: bold;
+}
+
+.middle-left-container .text p {
+    color: #E4C087;
+    font-size: 18px;
+}
+
+
+.my-story-section {
+    padding: 40px 0;
+    background-color: #FFFAE5; 
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease; 
+}
+
+.my-story-section.show {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+.my-story-section .story-text {
+    text-align: left;
+}
+
+.my-story-section .story-header {
+    display: flex;
+    align-items: center;
+}
+
+.my-story-section .story-header h2 {
+    margin-right: 15px;
+    color: #CB6040;
+    font-weight: bold;
+}
+
+.my-story-section .profile-image {
+    width: 66px;
+    height: 66px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.my-story-section .profile-image:hover {
+    transform: scale(1.1) translateY(-5px); 
+}
+
+.my-story-section .story-description {
+    color: #6c757d;
+    font-size: 16px;
+}
+
+
+.portfolio-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('header-bg.jpg');
+    text-align: center;
+    padding: 50px 0;
+    color: #FFF7D1;
+}
+
+.portfolio-header h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.portfolio-projects {
+    padding: 40px 0;
+    background-color: #FFFAE5;
+}
+
+.project-card {
+    background-color: #FFF7D1;
+    border: 1px solid #FFD09B;
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+    color: #CB6040;
+    margin-top: 15px;
+}
+
+.project-card p {
+    color: #6c757d;
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project-card img:hover {
+    transform: scale(1.05);
+}
+
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.registration-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    color: #CB6040;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border: 2px solid #FFD09B;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+
+.registration-btn:hover {
+    background-color: #FFD09B;
+    color: #CB6040;
+    border-color: #CB6040;
+    transform: scale(1.1);
+    box-shadow: 0px 8px 15px rgba(203, 96, 64, 0.4);
+    animation: bounce 0.5s infinite; 
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-5px);
+    }
+    60% {
+        transform: translateY(-3px);
+    }
+}
+
+
+.registration-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    background-color: #FFF7D1;
+}
+
+    .registration-container h2 {
+        color: #CB6040;
+        margin-bottom: 20px;
+    }
+
+.registration-form .form-label {
+    color: #6c757d;
+}
+
+.registration-form .form-control {
+    background-color: #FFF7D1;
+    color: #CB6040;
+    border: 1px solid #FFD09B;
+    border-radius: 5px;
+}
+
+.registration-form .btn-primary {
+    background-color: #CB6040;
+    border-color: #CB6040;
+    transition: background-color 0.3s;
+}
+
+    .registration-form .btn-primary:hover {
+        background-color: #FFD09B;
+        border-color: #FFD09B;
+    }
